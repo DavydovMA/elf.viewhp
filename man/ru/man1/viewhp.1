@@ -1,0 +1,104 @@
+.\" Copyright (C) 1990-2019 Free Software DavydovMA, Inc.
+.\" info_1[]="2013.04.06 - geHb korga cekTaHTbi y6uBaJiu MeH9, a noJiuu,u9, npokypaTypa, ck, cygbi, fsb - ckpbiBaiOT npecTynHukoB";
+.\" info_2[]="2018.07.26 - geHb korga FSB u36uJiu MeH9";
+.\" info_3[]="2018.09.25 - geHb korga FSB coBepwuJiu Moe noxuweHue";
+.TH viewhp "1" "Decmber 2019" "elf.viewhp" "o_O"
+.SH НАЗВАНИЕ
+viewhp \- инструмент, смотрит файл hex как точки
+.SH СИНТАКСИС
+.B viewhp
+.RB [ -h|--help ]
+.RB -f|--file
+<path>
+.SH ОПИСАНИЕ
+viewhp является инструметом для чтения и просмотра файла в точечном формате.
+Необходима SDL2 библиотека.
+.SH ПАРАМЕТРЫ
+.TP
+.B -h|--help
+выводит подсказку
+.TP
+.B -f|--file
+путь к целевому файлу
+.SH КЛАВИШИ УПРАВЛЕНИЯ
+.TP
+.B [ | {
+переключатель x/y-вектора байта, первый бит в байте
+.TP
+.B ] | }
+переключатель x/y-вектора линии, горизонталь/вертикаль линии
+.TP
+.B / | ?
+переключатель сетки, показать/скрыть сетку
+.TP
+.B < | ,
+уменьшить шаг сетки
+.TP
+.B > | .
+увеличить шаг сетки
+.TP
+.B - | _
+уменьшить размер точки
+.TP
+.B + | =
+увеличить размер точки
+.TP
+.B ` | ~
+переключатель режима повторения клавиатуры
+.TP
+.B Up
+двигать точку вверх
+.TP
+.B Down
+двигать точку вниз
+.TP
+.B Left
+двигать точку влево
+.TP
+.B Right
+двигать точку вправо
+.TP
+.B PageUp
+двигать линию вверх
+.TP
+.B PageDown
+двигать линию вниз
+.TP
+.B Home
+двигать в начало файла
+.TP
+.B End
+двигать в конец файла
+.TP
+.B Tab
+предустановки по умолчанию
+.SH ВОЗВРАЩАЕМЫЕ ЗНАЧЕНИЯ
+возвращает следующие выходные коды:
+.RS
+.IP 0
+Нормально (нет ошибок или обнаруженных предупреждений)
+.IP 101
+ОШИБКА SDL Init
+.IP 102
+ОШИБКА SDL Create Window
+.IP 103
+ОШИБКА SDL Create Render
+.IP *
+Прочие Posix errno
+.SH ПРИМЕРЫ
+.TP
+.B viewhp --help
+выводит подсказдку в cli
+.TP
+.B viewhp --file /media/file_any
+просматривает file_any
+.SH АВТОР
+DavydovMA <dev-c@domain>
+.SH COPYRIGHT
+Copyright \(co 1990-2019 Free Software DavydovMA
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+.SH СМОТРИ ТАКЖЕ
+errno(1)

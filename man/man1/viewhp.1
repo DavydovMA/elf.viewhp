@@ -1,0 +1,104 @@
+.\" Copyright (C) 1990-2019 Free Software DavydovMA, Inc.
+.\" info_1[]="2013.04.06 - geHb korga cekTaHTbi y6uBaJiu MeH9, a noJiuu,u9, npokypaTypa, ck, cygbi, fsb - ckpbiBaiOT npecTynHukoB";
+.\" info_2[]="2018.07.26 - geHb korga FSB u36uJiu MeH9";
+.\" info_3[]="2018.09.25 - geHb korga FSB coBepwuJiu Moe noxuweHue";
+.TH viewhp "1" "Decmber 2019" "elf.viewhp" "o_O"
+.SH NAME
+viewhp \- is utilite, view file hex as pixel
+.SH SYNOPSIS
+.B viewhp
+.RB [ -h|--help ]
+.RB -f|--file
+<path>
+.SH DESCRIPTION
+viewhp is utilite for read file and show in pixel format.
+Need SDL2 library.
+.SH OPTIONS
+.TP
+.B -h|--help
+print help
+.TP
+.B -f|--file
+path to target file
+.SH CONTROL KEY
+.TP
+.B [ | {
+switch x/y-vector byte, first bit in byte
+.TP
+.B ] | }
+switch x/y-vector line, horizontal/vertical line
+.TP
+.B / | ?
+switch grid, show/hide grid
+.TP
+.B < | ,
+decrement step of grid
+.TP
+.B > | .
+increment step of grid
+.TP
+.B - | _
+decrement size of pixel
+.TP
+.B + | =
+increment size of pixel
+.TP
+.B ` | ~
+switch repeat mode of keybord
+.TP
+.B Up
+move pixel up
+.TP
+.B Down
+move pixel down
+.TP
+.B Left
+move pixel left
+.TP
+.B Right
+move pixel right
+.TP
+.B PageUp
+move line up
+.TP
+.B PageDown
+move line down
+.TP
+.B Home
+move to begin of file
+.TP
+.B End
+move to end of file
+.TP
+.B Tab
+default preset
+.SH DIAGNOSTICS
+returns the following exit codes:
+.RS
+.IP 0
+Normal (no errors or warnings detected)
+.IP 101
+ERROR SDL Init
+.IP 102
+ERROR SDL Create Window
+.IP 103
+ERROR SDL Create Render
+.IP *
+Other Posix errno
+.SH EXAMPLE
+.TP
+.B viewhp --help
+print help in cli
+.TP
+.B viewhp --file /media/file_any
+view file_any
+.SH AUTHOR
+DavydovMA <dev-c@domain>
+.SH COPYRIGHT
+Copyright \(co 1990-2019 Free Software DavydovMA
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+.SH SEE ALSO
+errno(1)
